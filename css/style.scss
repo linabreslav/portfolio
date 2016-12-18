@@ -1,0 +1,243 @@
+
+// MIXINS
+@mixin fontStyleColor {
+  font-family: 'cajito';
+  color: #3A3A3C;
+}
+
+// VARIABLES
+$gray: #3A3A3C;
+$font: 'cajito';
+
+// GENERAL FIXES
+html, body, ul, li{
+  margin: 0px;
+  padding: 0px;
+}
+
+// HEADER STYLING: NAME
+header {
+  height: 125px;
+  position: relative;
+  background:
+  linear-gradient(
+    rgba(#466C79, 0.06),
+    rgba(#466C79, 0.06)
+  ),
+  url("../images/whitediamond.png");
+  background-repeat: repeat;
+  background-size: contain;
+
+// INSIDE HEADER NAME AND TITLE
+  .headname {
+    h1 {
+      @include fontStyleColor;
+      font-size: 40px;
+      position: absolute;
+      left: 8%;
+      text-transform: uppercase;
+    }
+    h2{
+      // @include fontStyleColor;
+      font-family: 'cajito';
+      color: #466C79;
+      font-weight: 200;
+      font-size: 20px;
+      position: absolute;
+      top: 45%;
+      left: 13%;
+    }
+    h3 {
+      @include fontStyleColor;
+      font-size: 70px;
+      font-weight: 300;
+      position: absolute;
+      top: -37%;
+      left: 4%;
+    }
+  }
+
+// SOCIAL MEDIA ICONS
+.socialmediaicons {
+  position: absolute;
+  left: 85%;
+  top: 65%;
+    ul {
+      li {
+        display: inline;
+        list-style: none;
+        padding: 0 5%;
+        a {
+          color: $gray;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// NAVIGATION
+nav {
+  text-align: center;
+  background-color: $gray;
+  ul {
+    li {
+      display: inline;
+      list-style: none;
+      padding: 2%;
+      text-decoration: none;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+        background-color: $gray;
+        color: white;
+        font-family: $font;
+        padding: .5%;
+        padding-top: 1%;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// MIDDLE CONTENT/ SHORTENED ABOUT ME
+section {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 5%;
+
+  .meblurb {
+    @include fontStyleColor;
+    font-size: 22px;
+    width: 38%;
+  }
+  .largecurlyicon {
+    img {
+      height: 190px;
+    }
+  }
+  .mephoto {
+    img{
+      box-sizing: border-box;
+      height: 180px;
+    }
+  }
+}
+
+// PROJECT SECTION
+.secondsection {
+  background-color: #fafafa;
+  margin-top: 5%;
+  h2 {
+    font-family: 'cajito';
+    color: #466C79;
+    font-size: 32px;
+    margin-left: 5%;
+    padding-top: 2%;
+    }
+  .projectcontainer {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: center;
+    margin: 0 auto;
+    .project {
+      padding: 1% 2%;
+      img {
+        width: 290px;
+        height: 155px;
+        text-align: center;
+        object-fit: contain;
+        }
+      }
+      h2 {
+        @include fontStyleColor;
+        font-size: 18px;
+        padding-top: 6%;
+        font-weight: 200;
+      }
+    }
+  }
+
+
+// BLOG SECTION: FEATURED POST
+.thirdsection {
+  width: 80%;
+  h2 {
+    font-family: 'cajito';
+    color: #466C79;
+    font-size: 32px;
+    padding-top: 2%;
+  }
+}
+
+
+
+
+
+
+
+// MOBILE MEDIA QUERY
+
+@media (max-width: 699px) {
+
+  header {
+    padding-top: 0%;
+  }
+
+  header .headname h1 {
+    top: 20%;
+    left: 19%;
+  }
+
+  header .headname h2 {
+    left: 15%;
+    top: 62%;
+  }
+
+  header .headname h3 {
+    left: 8%;
+    top: -20%;
+  }
+
+  header .fullhead .socialmediaicons {
+    top: 150%;
+    left: 65%;
+  }
+
+  nav ul li a {
+    font-size: 19px;
+    padding: 2% 0;
+    padding-top: 3%;
+  }
+
+  section {
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 20%;
+
+    .meblurb {
+      @include fontStyleColor;
+      font-size: 16px;
+      width: 50%;
+    }
+    .largecurlyicon {
+      img {
+        height: 70px;
+        padding: 17%;
+      }
+    }
+    .mephoto {
+      img{
+        height: 130px;
+        padding: 8%;
+      }
+    }
+  }
+}
